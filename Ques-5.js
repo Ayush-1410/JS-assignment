@@ -18,12 +18,14 @@ console.log(checkSal);
 
 // group employee on the basis of their age
 
-function groupBy(key){
-	return function group(array){
-		return array.reduce((acc,obj) => {
-			const prop = obj[key];
-			acc[prop] = acc[prop] || [];
-			acc[prop].push(obj);
+function groupBy(key){                                 // groupBy function takes key as argument (eg.age)
+	return function group(array){                  // return another function group, which takes array of objects that we like to sort.
+		return array.reduce((acc,obj) => {     // now reducing array using an empty object as the accumulator
+			const prop = obj[key];         // obj[key] here will be '24'.
+			acc[prop] = acc[prop] || [];   // At this point acc['24'] doesn't yet exist, so it will be an empty array.
+			                   // it checks if acc['24'] exists, and if not, creates it and assigns a value of an empty array.
+			
+			acc[prop].push(obj);   // now, we push our object into the right group
 			return acc
 		}, {});
 	};

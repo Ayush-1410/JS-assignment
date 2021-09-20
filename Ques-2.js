@@ -1,4 +1,4 @@
-function Palindrome(str) {
+function Palindrome(string) {
 
     let len = string.length;
 

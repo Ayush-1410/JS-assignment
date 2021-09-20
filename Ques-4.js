@@ -5,5 +5,7 @@ let data = {
 	sirname: 'Sawant'
 };
 
-let copy_data = data;
+let copy_data = {
+	...data
+};
 console.log(copy_data);

@@ -42,9 +42,11 @@ console.log(fetchEmp);
 
 // Then give them an increment 5 times their salary.
 
-const sal_Inc1 = fetchEmp[0].salary * 5;
-const sal_Inc2 = fetchEmp[1].salary * 5;
-console.log(sal_Inc1, sal_Inc2);
+const s = fetchEmp.map((item) => {
+	item.salary = item.salary * 5;
+	return item;
+});
+console.log(s);
 
 
 
